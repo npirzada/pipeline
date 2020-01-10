@@ -10,55 +10,64 @@ echo "Building GCP Environment with Terraform"'''
 
     stage('Build Package') {
       steps {
-        sh 'echo "Creating a Maven Build"'
+        sh '''sleep 5
+echo "Creating a Maven Build"'''
       }
     }
 
     stage('Unit Testing') {
       steps {
-        sh 'echo "Running Unit Tests"'
+        sh '''sleep 5
+echo "Running Unit Tests"'''
       }
     }
 
     stage('SonarQube Scan') {
       steps {
-        sh 'echo "Performing Static Code Analysis"'
+        sh '''sleep 10
+echo "Performing Static Code Analysis"'''
       }
     }
 
     stage('Nexus IQ Scan') {
       steps {
-        sh 'echo "Nexus IQ Scan"'
+        sh '''sleep 6
+echo "Nexus IQ Scan"'''
       }
     }
 
     stage('Nexus  Deployment') {
       steps {
-        sh 'echo "package deployed to repository"'
+        sh '''sleep 7
+echo "package deployed to repository"'''
       }
     }
 
     stage('InSpec Scan') {
       steps {
-        sh 'echo "Environmet Chef Scan "'
+        sh '''sleep 7
+echo "Environmet Chef Scan "'''
       }
     }
 
     stage('Deploy to Dev') {
       steps {
-        sh 'echo "Deploy to Dev"'
+        sh '''sleep 5
+echo "Deploy to Dev"'''
       }
     }
 
     stage('InSpec Scan Dev') {
       steps {
-        sh 'echo "Deploy to Dev"'
+        sh '''sleep 5
+echo "Deploy to Dev"'''
       }
     }
 
     stage('Deploy to QA') {
       steps {
-        sh 'echo "Deploy to QA"'
+        sh '''sleep 5
+echo "Deploy to QA"'''
       }
     }
 
@@ -72,7 +81,8 @@ echo "Building GCP Environment with Terraform"'''
       parallel {
         stage('QA Automated Testing') {
           steps {
-            sh 'echo "Selinum testing"'
+            sh '''sleep 5
+echo "Selinum testing"'''
           }
         }
 
@@ -93,19 +103,22 @@ echo "Building GCP Environment with Terraform"'''
 
     stage('Vericode Scan') {
       steps {
-        sh 'echo "Vericode Scan"'
+        sh '''sleep 5
+echo "Vericode Scan"'''
       }
     }
 
     stage('InSpec Scan Prod') {
       steps {
-        sh 'echo "test"'
+        sh '''sleep 5
+echo "test"'''
       }
     }
 
     stage('Deploy to Prod') {
       steps {
-        sh 'echo "test"'
+        sh '''sleep 5
+echo "test"'''
       }
     }
 
