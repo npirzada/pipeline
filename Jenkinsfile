@@ -25,5 +25,88 @@ pipeline {
       }
     }
 
+    stage('Nexus IQ Scan') {
+      steps {
+        sh 'Echo "Nexus IQ Scan"'
+      }
+    }
+
+    stage('Nexus  Deployment') {
+      steps {
+        sh 'echo "package deployed to repository"'
+      }
+    }
+
+    stage('InSpec Scan') {
+      steps {
+        sh 'Echo "Environmet Chef Scan "'
+      }
+    }
+
+    stage('Deploy to Dev') {
+      steps {
+        sh 'echo "Deploy to Dev"'
+      }
+    }
+
+    stage('InSpec Scan Dev') {
+      steps {
+        sh 'echo "Deploy to Dev"'
+      }
+    }
+
+    stage('Deploy to QA') {
+      steps {
+        sh 'echo "Deploy to QA"'
+      }
+    }
+
+    stage('InSpec Scan QA') {
+      steps {
+        sh 'echo "InSpec Scan"'
+      }
+    }
+
+    stage('QA Automated Testing') {
+      parallel {
+        stage('QA Automated Testing') {
+          steps {
+            sh 'echo "Selinum testing"'
+          }
+        }
+
+        stage('Smoke Test') {
+          steps {
+            sh 'echo "smoke"'
+          }
+        }
+
+        stage('Regression Tests') {
+          steps {
+            sh 'echo "regression testing"'
+          }
+        }
+
+      }
+    }
+
+    stage('Vericode Scan') {
+      steps {
+        sh 'echo "Vericode Scan"'
+      }
+    }
+
+    stage('InSpec Scan Prod') {
+      steps {
+        sh 'echo "test"'
+      }
+    }
+
+    stage('Deploy to Prod') {
+      steps {
+        sh 'echo "test"'
+      }
+    }
+
   }
 }
