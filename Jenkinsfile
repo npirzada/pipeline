@@ -27,7 +27,7 @@ pipeline {
 
     stage('Nexus IQ Scan') {
       steps {
-        sh 'Echo "Nexus IQ Scan"'
+        sh 'echo "Nexus IQ Scan"'
       }
     }
 
