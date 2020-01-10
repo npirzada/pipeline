@@ -88,13 +88,15 @@ echo "Selinum testing"'''
 
         stage('Smoke Test') {
           steps {
-            sh 'echo "smoke"'
+            sh '''sleep 5
+echo "smoke"'''
           }
         }
 
         stage('Regression Tests') {
           steps {
-            sh 'echo "regression testing"'
+            sh '''sleep 5
+echo "regression testing"'''
           }
         }
 
