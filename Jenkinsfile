@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('GCP Env Build') {
       steps {
-        sh 'echo "Building GCP Environment with Terraform"'
+        sh '''sleep 10
+echo "Building GCP Environment with Terraform"'''
       }
     }
 
