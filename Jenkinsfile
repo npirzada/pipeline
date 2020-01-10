@@ -40,7 +40,7 @@ echo "Building GCP Environment with Terraform"'''
 
     stage('InSpec Scan') {
       steps {
-        sh 'Echo "Environmet Chef Scan "'
+        sh 'echo "Environmet Chef Scan "'
       }
     }
 
