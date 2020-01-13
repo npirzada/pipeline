@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('GCP Env Build') {
+    stage('GCP env create dev') {
       steps {
         sh '''sleep 10
 echo "Building GCP Environment with Terraform"'''
@@ -36,7 +36,6 @@ echo "Performing Static Code Analysis"'''
             sh 'echo "Twistlock Container Scan"'
           }
         }
-
       }
     }
 
@@ -68,6 +67,12 @@ echo "Deploy to Dev"'''
       }
     }
 
+   stage('GCP Infrastructure build qa') {
+      steps {
+        sh '''sleep 10
+echo "Building GCP Environment with Terraform"'''
+      }
+    }
     stage('InSpec Scan QA') {
       steps {
         sh '''sleep 5
@@ -104,7 +109,6 @@ echo "smoke"'''
 echo "regression testing"'''
           }
         }
-
       }
     }
 
@@ -115,6 +119,12 @@ echo "Vericode Scan"'''
       }
     }
 
+     stage('GCP Infrastructure build prod') {
+      steps {
+        sh '''sleep 10
+echo "Building GCP Environment with Terraform"'''
+      }
+    }
     stage('InSpec Scan Prod') {
       steps {
         sh '''sleep 5
