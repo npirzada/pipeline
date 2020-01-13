@@ -43,7 +43,7 @@ echo "package deployed to repository"'''
       }
     }
 
-    stage('InSpec Scan') {
+    stage('InSpec Scan Dev') {
       steps {
         sh '''sleep 7
 echo "Environmet Chef Scan "'''
@@ -57,7 +57,7 @@ echo "Deploy to Dev"'''
       }
     }
 
-    stage('InSpec Scan Dev') {
+    stage('InSpec Scan QA') {
       steps {
         sh '''sleep 5
 echo "Deploy to Dev"'''
@@ -68,12 +68,6 @@ echo "Deploy to Dev"'''
       steps {
         sh '''sleep 5
 echo "Deploy to QA"'''
-      }
-    }
-
-    stage('InSpec Scan QA') {
-      steps {
-        sh 'echo "InSpec Scan"'
       }
     }
 
@@ -121,6 +115,18 @@ echo "test"'''
       steps {
         sh '''sleep 5
 echo "test"'''
+      }
+    }
+
+    stage('Prod Automated Vlidation') {
+      steps {
+        sh 'echo "Deploy package to production"'
+      }
+    }
+
+    stage('Vericode Scan ?') {
+      steps {
+        sh 'echo "Production Vericode Scan"'
       }
     }
 
