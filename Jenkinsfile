@@ -23,9 +23,20 @@ echo "Running Unit Tests"'''
     }
 
     stage('SonarQube Scan') {
-      steps {
-        sh '''sleep 10
+      parallel {
+        stage('SonarQube Scan') {
+          steps {
+            sh '''sleep 10
 echo "Performing Static Code Analysis"'''
+          }
+        }
+
+        stage('TwistLock Scan') {
+          steps {
+            sh 'echo "Twistlock Container Scan"'
+          }
+        }
+
       }
     }
 
