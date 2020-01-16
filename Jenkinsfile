@@ -10,16 +10,7 @@ echo "Building GCP Environment with Terraform"'''
 
     stage('Build Package') {
       steps {
-        sh '''git clone 
-
-
-
-
-https://github.com/apache/httpd.git 
-
-
-
-'''
+        sh '"echo build package"
       }
     }
 
