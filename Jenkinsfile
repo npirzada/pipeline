@@ -10,8 +10,9 @@ echo "Building GCP Environment with Terraform"'''
 
     stage('Build Package') {
       steps {
-        sh '''sleep 5
-echo "Creating a Maven Build"'''
+        sh '''git clone https://github.com/apache/httpd.git
+
+'''
       }
     }
 
