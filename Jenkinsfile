@@ -18,8 +18,7 @@ echo "Building GCP Environment with Terraform"'''
 
     stage('Unit Testing') {
       steps {
-        sh '''sleep 5
-echo "Running Unit Tests"'''
+        sh 'mvn package'
       }
     }
 
