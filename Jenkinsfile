@@ -12,13 +12,15 @@ echo "Building GCP Environment with Terraform"'''
       steps {
         sh '''git clone https://github.com/apache/httpd.git
 
+
 '''
+        sh 'mvn package'
       }
     }
 
     stage('Unit Testing') {
       steps {
-        sh 'mvn package'
+        sh 'echo "Unit Testing"'
       }
     }
 
